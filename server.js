@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { dbConnections } from "./Database/db.js";
 
-import userRoute from "./Routes/userlogin.route.js";
+// import userRoute from "./Routes/userlogin.route.js";
 import animalVideoImagesRoute from "./Routes/video.route.js";
 
 import dotenv from "dotenv";
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 
 // Use routes
 
-app.use("/auth", userRoute);
+// app.use("/auth", userRoute);
 app.use("/api", animalVideoImagesRoute);
 
 
