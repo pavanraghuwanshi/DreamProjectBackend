@@ -1,12 +1,12 @@
-// import express from 'express';
-// import { addAdmin, loginUser, storeFcmToken } from '../Controllers/User.Controller.js';
-// import authenticateUser from '../Middleware/authMiddleware.js';
+import express from 'express';
+import { loginUser, registerUser } from '../Controllers/User.Controller.js';
 
-// const router = express.Router();
+const router = express.Router();
 
 
-// router.post("/login",loginUser);
-// router.post("/superadmin",addAdmin);
-// router.post("/fcmtoken/store",authenticateUser,storeFcmToken);
+router.post("/register/user",registerUser);
+router.post("/auth/login",loginUser);
 
-// export default router;
+
+
+export default router;

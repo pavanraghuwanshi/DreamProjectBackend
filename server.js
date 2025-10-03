@@ -2,10 +2,14 @@ import express from "express";
 import { createServer } from "http";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import { dbConnections } from "./Database/db.js";
+import  {connectDB}  from "./Database/db.js";
 
-// import userRoute from "./Routes/userlogin.route.js";
+
+
+import userRoute from "./Routes/userlogin.route.js";
 import animalVideoImagesRoute from "./Routes/video.route.js";
+
+
 
 import dotenv from "dotenv";
 
@@ -13,6 +17,8 @@ import compression from "compression";
 import { setupSocket } from "./Utils/socket/socket.js";
 
 dotenv.config();
+
+connectDB();
 
 const app = express();
 const server = createServer(app);
@@ -35,7 +41,7 @@ app.get("/", (req, res) => {
 
 // Use routes
 
-// app.use("/auth", userRoute);
+app.use("/api", userRoute);
 app.use("/api", animalVideoImagesRoute);
 
 

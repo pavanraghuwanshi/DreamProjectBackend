@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import  {dbConnections}  from "../Database/db.js"; 
+
 
 const videoSchema = new mongoose.Schema(
   {
@@ -10,11 +10,11 @@ const videoSchema = new mongoose.Schema(
     },
     path: {
       type: String,
-      required: true, // stored 360p path
+      required: true,
     },
   },
   { timestamps: true }
 );
 
 
-export default dbConnections.db2.model("Video", videoSchema);
+export default mongoose.model("Video", videoSchema);
